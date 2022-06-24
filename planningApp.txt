@@ -1,0 +1,11 @@
+Planning the App
+		Root
+		Header
+Shopping List			Recipe Book
+					
+Shopping List			Recipe List
+Shopping List Edit  	Recipe Item
+Ingredient				Recipe Detail
+							Recipe
+
+Model Comp Feature
