@@ -1,26 +1,13 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div style="margin-top:10px" class="col-xs-12">
         <button class="btn btn-success">New Recipe</button>
         <hr>
     </div>
 </div>
 <div class="row" >
-    <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix"
-         *ngFor="let recp of recipes">
-            <div class="col-xs-6 pull-left">
-                <h4 class="list-group-item-heading">
-                    {{recp.name}}
-                </h4>
-                <p class="list-group-item-text">{{recp.description}}</p>
-            </div>
-            <span class="col-xs-6 pull-right">
-                <img [src]="recp.imagePath" 
-                alt="{{recp.name}}" 
-                class="img-responsive" 
-                style="max-height: 50px;max-width:100px">
-            </span>
-        </a>
-        <app-recipe-item></app-recipe-item>
+    <div class="col-xs-12">    
+        <app-recipe-item   *ngFor="let recipeEl of recipes"       
+        [recipe]="recipeEl"
+        (recipeSelectedItem)="onRecipeSelectedToPass(recipeEl)"></app-recipe-item>      
     </div>
 </div>
