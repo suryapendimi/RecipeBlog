@@ -14,7 +14,7 @@ export class ShoppingListComponent implements OnInit {
   constructor(private shoppingLstService:ShoppingListService) { }
 
   ngOnInit(): void {
-    this.ingredients=this.shoppingLstService.getIngredient();
+    this.ingredients=this.shoppingLstService.getIngredients();
     this.subscription=this.shoppingLstService.ingredientsChanged
     .subscribe((
       ingredients:Ingredient[]) =>{
@@ -28,4 +28,6 @@ export class ShoppingListComponent implements OnInit {
 
   onEditItem(index:number){
     this.shoppingLstService.startedEditing.next(index);
+}
+
 }

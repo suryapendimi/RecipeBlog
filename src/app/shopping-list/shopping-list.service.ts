@@ -11,7 +11,7 @@ export class ShoppingListService{
         new Ingredient('Pepers',2)
       ];
 
-getIngredient(){
+getIngredients(){
     return this.ingredients.slice();
 }
 
@@ -31,8 +31,24 @@ addIngredient(ingredient:Ingredient){
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
-  onEditItem(index:number){
-    this.ShoppingListService.startted
+/*   onEditItem(index:number){
+   // this.startedEditing=
+  }
+ */
+  getIngredient(index:number){
+    return this.ingredients[index];
   }
 
+  updateIngredient(index:number,newIngredient:Ingredient){
+    this.ingredients[index]=newIngredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+
+  }
+
+  deleteIngredient(index:number)
+  {
+    this.ingredients.splice(index,1);
+    this.ingredientsChanged.next(this.ingredients.slice());
+
+  }
 }
