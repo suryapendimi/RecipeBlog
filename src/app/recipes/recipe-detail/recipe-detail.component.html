@@ -10,9 +10,9 @@
                 {{ingred.name}}-{{ingred.amount}}
             </li>
           </ul>
-          <a style="cursor:pointer" class="card-link">To Shopping List</a>
-          <a href="#"  class="card-link">Edit Recipe</a>
-          <a href="#"  class="card-link">Delete Recipe</a>      
+          <a style="cursor:pointer" (click)="onAddToShoppingList()" class="card-link">To Shopping List</a>
+          <a style="cursor:pointer" class="card-link">Edit Recipe</a>
+          <a style="cursor:pointer"  class="card-link">Delete Recipe</a>      
         </div>
       </div>
       </div>

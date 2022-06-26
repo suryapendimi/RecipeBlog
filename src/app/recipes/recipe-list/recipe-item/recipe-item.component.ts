@@ -13,7 +13,6 @@ export class RecipeItemComponent implements OnInit {
   recipeName:string;
   recImage:string;
   recDesc:string
-  constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
     //debugger;
@@ -25,10 +24,10 @@ export class RecipeItemComponent implements OnInit {
     }
   }
 
-  onSelectedRecipeItem()
+ /*  onSelectedRecipeItem()
   {
    // this.recipeSelectedItem.emit();
    this.recipeService.recipeSelected.emit(this.recipe);
-  }
+  } */
 
 }
