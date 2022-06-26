@@ -5,7 +5,12 @@
         <div class="card-body">
           <h5 class="card-title">{{recipe.name}}</h5>
           <p class="card-text">{{recipe.description}}</p>
-          <a href="#"  class="card-link">To Shopping List</a>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingred of recipe.ingredients">
+                {{ingred.name}}-{{ingred.amount}}
+            </li>
+          </ul>
+          <a style="cursor:pointer" class="card-link">To Shopping List</a>
           <a href="#"  class="card-link">Edit Recipe</a>
           <a href="#"  class="card-link">Delete Recipe</a>      
         </div>
