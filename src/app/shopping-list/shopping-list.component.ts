@@ -30,4 +30,9 @@ export class ShoppingListComponent implements OnInit {
     this.shoppingLstService.startedEditing.next(index);
 }
 
+onDelete(index:number)
+{
+  
+}
+
 }
