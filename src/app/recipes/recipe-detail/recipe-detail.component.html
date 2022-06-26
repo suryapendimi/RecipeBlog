@@ -1,11 +1,17 @@
 <div class="row" style="margin-top: 60px;">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 28rem;">
         <img  [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive"
         style="max-height: 200px;" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{recipe.name}}</h5>
           <p class="card-text">{{recipe.description}}</p>
-          <div class="btn-group">
+          <a href="#"  class="card-link">To Shopping List</a>
+          <a href="#"  class="card-link">Edit Recipe</a>
+          <a href="#"  class="card-link">Delete Recipe</a>      
+        </div>
+      </div>
+      </div>
+    <!--  <div class="btn-group">
             <button type="button" 
                 class="btn btn-primary dropdown-toggle">
                 Manage Recipe   <span
@@ -15,8 +21,5 @@
                 <li><a href="#">To Shopping List</a></li>
                 <li><a href="#">Edit Recipe</a></li>
                 <li><a href="#">Delete Recipe</a></li>
-            </ul>
-        </div>
-        </div>
-      </div>
-      </div>
+            </ul>  
+        </div> -->
