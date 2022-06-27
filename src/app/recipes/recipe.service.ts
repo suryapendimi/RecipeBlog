@@ -7,7 +7,7 @@ import { Recipe } from "./recipe.model";
 export class RecipeService{
   recipeChanged=new Subject<Recipe[]>();
    // recipeSelected=new Subject<Recipe>();
-    private recipes: Recipe[]=[
+   /*  private recipes: Recipe[]=[
         new Recipe('Apple Pie',
         'It is a deseart',
         'https://media.istockphoto.com/photos/slice-of-apple-pie-on-a-plate-isolalted-on-a-white-background-picture-id184350005?b=1&k=20&m=184350005&s=170667a&w=0&h=Ls_1JleYq5ekFI3qMqNZIcP8iKq3awZlH33xnkHt3j8='
@@ -32,11 +32,17 @@ export class RecipeService{
         new Ingredient('Cheese',10)
         ]),
     
-      ];
+      ]; */
 
+      private recipes: Recipe[]=[];
       constructor(private shoppingLstService:ShoppingListService){
 
-      }     
+      }
+      
+      setRecipes(recipes:Recipe[]){
+        this.recipes=recipes;
+        this.recipeChanged.next(this.recipes.slice());
+      }
       getRecipes(){
         return this.recipes.slice();
         //returns a new array so we can't access a original recipes array.
