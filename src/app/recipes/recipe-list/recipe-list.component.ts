@@ -11,7 +11,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit,OnDestroy {
-//  @Output() recipeWasSelected=new EventEmitter<Recipe>();
    recipes:Recipe[];
 
    subscription :Subscription;
@@ -26,15 +25,16 @@ export class RecipeListComponent implements OnInit,OnDestroy {
       (recipes:Recipe[]) =>{
         this.recipes=recipes;
       }
-    )
-    this.recipes=this.recipehttpService.getRecipes();
-   // console.log(this.recipes);
-  }
+    );
 
-  /* onRecipeSelectedToPass(recipe:Recipe)
-  {
-    this.recipeWasSelected.emit(recipe);
-  } */
+    this.recipehttpService.getRecipes()
+    .subscribe(data => {
+      console.log(data)
+      this.recipes=data;
+    });     
+
+   
+  }
 
   onNewRecipe()
   {

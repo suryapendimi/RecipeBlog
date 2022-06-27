@@ -9,7 +9,7 @@ import { Recipe } from './../../recipe.model';
 export class RecipeItemComponent implements OnInit {
   @Input() recipe:Recipe; //this is the values passed from recipe list comp
   // @Output() recipeSelectedItem =new EventEmitter<void>();
-  @Input() index:number;
+  @Input() recipeid:number;
   recipeName:string;
   recImage:string;
   recDesc:string

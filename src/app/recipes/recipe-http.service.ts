@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from "./recipe.model";
@@ -21,15 +21,9 @@ export class RecipeHttpService {
         this.recipeChanged.next(this.recipes.slice());
       }
 
-      getRecipes(){
-        this.http.get<Recipe[]>(this.baseUrl)
-        .subscribe(res =>{          
-            return this.recipes=res;
-          }),
-          (err:any)=>{
-          alert("something went wrong");
-        };
-        
+      getRecipes(): Observable<Recipe[]>{
+        return this.http.get<Recipe[]>(this.baseUrl)
+    
         }
       //  return this.recipes.slice();
         //returns a new array so we can't access a original recipes array.
@@ -39,34 +33,59 @@ export class RecipeHttpService {
       addIngredientToShoppingList(ingredients:Ingredient[]){
         this.shoppingLstService.addIngredients(ingredients);
       }
-
-      getRecipe(index:number)
-      {        
-        this.http.get<Recipe[]>(this.baseUrl)
-        .subscribe(res =>{          
-            return this.recipes=res;
-          }),
-          (err:any)=>{
-          alert("something went wrong");
-        };
-
-        return this.recipes[index];
+      
+      getRecipe(id: number): Observable<Recipe> {
+        return this.http.get<Recipe>(`${this.baseUrl}/${id}`);
       }
 
-      addRecipe(recipe:Recipe)
-      {
+      addRecipe(recipe:Recipe): Observable<any> {
+        debugger;
+          const headers = { 'content-type': 'application/json'}  
+          const body=JSON.stringify(recipe);
+          console.log(body)
+          return this.http.post(this.baseUrl, body,{'headers':headers});          
+    
+          //
+
         this.recipes.push(recipe);
         this.recipeChanged.next(this.recipes.slice());
-      }
-      updateRecipe(index:number,newRecipe:Recipe){
-        this.recipes[index]=newRecipe;
-        this.recipeChanged.next(this.recipes.slice());
+        }
+      
+      updateRecipe(id:number,newRecipe:Recipe): Observable<any> {  
+        const headers = { 'content-type': 'application/json'}  
+        const body=JSON.stringify(newRecipe);
+        console.log(body)   
+        return this.http.put(this.baseUrl + '/'+id, body,{'headers':headers})
+          .pipe(map((data) =>{
+            console.log(data);
+            return data;
+          }),
+         ((err) => {
+           console.error(err);
+           throw err;
+         }
+       ));     
+
+
+      //{
+      //  this.recipes[index]=newRecipe;
+      //  this.recipeChanged.next(this.recipes.slice());
       }
 
-      deleteRecipe(index:number)
+      deleteRecipe(id:number)
       {
-        this.recipes.splice(index,1);
-        this.recipeChanged.next(this.recipes.slice());
+       // this.recipes.splice(index,1);
+        //this.recipeChanged.next(this.recipes.slice());
+        const headers = { 'content-type': 'application/json'}  
+        return this.http.delete(this.baseUrl+'/'+id, {'headers':headers})
+        .pipe(map((data) =>{
+          return data;
+        }),
+       ((err) => {
+         console.error(err);
+         throw err;
+       }
+     ));     
 
       }
 }

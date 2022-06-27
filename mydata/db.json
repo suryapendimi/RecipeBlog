@@ -64,84 +64,115 @@
       "id": 8
     }
   ],
-  "recipes":[
+  "recipes": [
     {
-      "id":1,
-      "name":"Apple Pie",
-      "description":"It is a deseart",
-      "imagePath":"//media.istockphoto.com/photos/slice-of-apple-pie-on-a-plate-isolalted-on-a-white-background-picture-id184350005?b=1&k=20&m=184350005&s=170667a&w=0&h=Ls_1JleYq5ekFI3qMqNZIcP8iKq3awZlH33xnkHt3j8=",
-      "ingredients":[{
-        "name":"Pie Crust",
-        "amount":1
-         },
-         {
-          "name":"Apples",
-          "amount":5
-           },
-           {
-            "name":"BrownSugar",
-            "amount":1
-             }
+      "id": 1,
+      "name": "Apple Pie",
+      "description": "It is a deseart",
+      "imagePath": "//media.istockphoto.com/photos/slice-of-apple-pie-on-a-plate-isolalted-on-a-white-background-picture-id184350005?b=1&k=20&m=184350005&s=170667a&w=0&h=Ls_1JleYq5ekFI3qMqNZIcP8iKq3awZlH33xnkHt3j8=",
+      "ingredients": [
+        {
+          "name": "Pie Crust",
+          "amount": 1
+        },
+        {
+          "name": "Apples",
+          "amount": 5
+        },
+        {
+          "name": "BrownSugar",
+          "amount": 1
+        }
       ]
     },
     {
-      "id":2,
-      "name":"Chocolate Cream Cake",
-      "description":"It is a my Favorite desert",
-      "imagePath":"https://www.giftmyemotions.com/image/cache/floralnation/amazone/0133-800x800.jpg",
-      "ingredients":[{
-        "name":"Cake Base",
-        "amount":1
-         },
-         {
-          "name":"Choco Cream",
-          "amount":5
-           },
-           {
-            "name":"Sprinkles",
-            "amount":100
-             }
+      "id": 2,
+      "name": "Chocolate Cream Cake",
+      "description": "It is a my Favorite desert",
+      "imagePath": "https://www.giftmyemotions.com/image/cache/floralnation/amazone/0133-800x800.jpg",
+      "ingredients": [
+        {
+          "name": "Cake Base",
+          "amount": 1
+        },
+        {
+          "name": "Choco Cream",
+          "amount": 5
+        },
+        {
+          "name": "Sprinkles",
+          "amount": 100
+        }
       ]
     },
     {
-      "id":3,
-      "name":"Mixed Veg Pizza",
-      "description":"Yummy Yummy Pizza",
-      "imagePath":"https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/otpgblyzomhf5audk4m2",
-      "ingredients":[{
-        "name":"Pizza Base",
-        "amount":1
-         },
-         {
-          "name":"Mozerola cheese packs",
-          "amount":2
-           },
-           {
-            "name":"Veggies",
-            "amount":5
-             }
+      "id": 3,
+      "name": "Mixed Veg Pizza",
+      "description": "Yummy Yummy Pizza",
+      "imagePath": "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/otpgblyzomhf5audk4m2",
+      "ingredients": [
+        {
+          "name": "Pizza Base",
+          "amount": 1
+        },
+        {
+          "name": "Mozerola cheese packs",
+          "amount": 2
+        },
+        {
+          "name": "Veggies",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bread",
+      "description": "sdcsdfsdf",
+      "imagePath": "https://www.katiescucina.com/wp-content/uploads/2021/09/OG-Minestrone-Soup.jpg",
+      "ingredients": [
+        {
+          "name": "ffdsf",
+          "amount": 3
+        },
+        {
+          "name": "fdsfdsf",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Registration",
+      "description": "sdfsfewretretretreterte",
+      "imagePath": "https://www.katiescucina.com/wp-content/uploads/2021/09/OG-Minestrone-Soup.jpg",
+      "ingredients": [
+        {
+          "name": "werwe",
+          "amount": 1
+        }
       ]
     }
   ],
   "shoppingList": [
-    {   
-    "ingredients":[{
-      "id":1,
-      "name":" asparagus",
-      "amount":2
-       },
-       {
-        "id":2,
-        "name":" asparagus11",
-        "amount":21
-         },
-         {
-          "id":3,
-          "name":" asparagus22",
-          "amount":22
-           }
-    ]
-  }
-]
+    {
+      "ingredients": [
+        {
+          "id": 1,
+          "name": " asparagus",
+          "amount": 2
+        },
+        {
+          "id": 2,
+          "name": " asparagus11",
+          "amount": 21
+        },
+        {
+          "id": 3,
+          "name": " asparagus22",
+          "amount": 22
+        }
+      ]
+    }
+  ]
 }
-
