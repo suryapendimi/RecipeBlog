@@ -1,3 +1,4 @@
+import { RecipeHttpService } from './../recipe-http.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from './../recipe.service';
 import { Recipe } from './../recipe.model';
@@ -16,16 +17,17 @@ export class RecipeListComponent implements OnInit,OnDestroy {
    subscription :Subscription;
   constructor(private recipeService:RecipeService,
     private router:Router,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute,
+    private recipehttpService:RecipeHttpService,) { }
 
   ngOnInit(){   
-    this.subscription =this.recipeService.recipeChanged
+    this.subscription =this.recipehttpService.recipeChanged
     .subscribe(
       (recipes:Recipe[]) =>{
         this.recipes=recipes;
       }
     )
-    this.recipes=this.recipeService.getRecipes();
+    this.recipes=this.recipehttpService.getRecipes();
    // console.log(this.recipes);
   }
 
