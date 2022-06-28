@@ -34,7 +34,11 @@ export class RecipeHttpService {
         this.shoppingLstService.addIngredients(ingredients);
       }
       
-      getRecipe(id: number): Observable<Recipe> {
+     // getRecipe(id: number): Observable<Recipe> {
+      //  return this.http.get<Recipe>(`${this.baseUrl}/${id}`);
+      //}
+
+      getRecipe(id: any): Observable<Recipe> {
         return this.http.get<Recipe>(`${this.baseUrl}/${id}`);
       }
 

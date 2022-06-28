@@ -26,13 +26,17 @@ export class RecipeEditComponent implements OnInit {
     .subscribe((param:Params) =>{
       this.id= + param['id'];
       this.editMode=param['id']!=null;     
-      //console.log(this.editMode);      
-    });
+      //console.log(this.editMode); 
+    this.getRecipeById(this.id);    
+    console.log(this.recipe);
 
     this.initForm();
+
+    });
+
   }
 
-  getRecipeById(id: number): void {
+  OldgetRecipeById(id: number): void {
     this.recipehttpservice.getRecipe(id)
       .subscribe((data) => {
           this.recipe = data;
@@ -40,11 +44,20 @@ export class RecipeEditComponent implements OnInit {
         });
     }
 
+
+    getRecipeById(id: number): void {
+      this.recipehttpservice.getRecipe(this.id)
+        .subscribe({
+          next: (data) => {
+            this.recipe = data;
+            console.log(data);
+          },
+          error: (e) => console.error(e)
+        });
+    }
+
   private initForm(){
     
-    this.getRecipeById(this.id);    
-    console.log(this.recipe);
-
     let recipeName:string='';
     let recipeImagePath:string='';
     let recipedescription:string='';
@@ -133,5 +146,14 @@ export class RecipeEditComponent implements OnInit {
   onMessage()
   {
     this.successMessageShow=false;
+    this.reloadComponent()
+    //this.router.navigate(['../'],{relativeTo:this.route})
   }
+
+  reloadComponent() {
+    let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate([currentUrl]);
+    }
 }
