@@ -1,0 +1,5 @@
+.mybackground{   
+    width:100%;
+    max-height:90%;
+    background: linear-gradient(90deg,rgb(183, 211, 232) 0%, rgb(164, 155, 183) 100%);
+}

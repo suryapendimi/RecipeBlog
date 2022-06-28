@@ -1,3 +1,4 @@
+import { UserService } from './auth/user.service';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
@@ -17,6 +18,10 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import{HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AboutComponent } from './shared/about/about.component';
+import { ContactComponent } from './shared/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,10 @@ import{HttpClientModule} from '@angular/common/http';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    LoginComponent,
+    SignupComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +48,7 @@ import{HttpClientModule} from '@angular/common/http';
     HttpClientModule,    
     ReactiveFormsModule,
   ],
-  providers: [ShoppingListService,RecipeService],
+  providers: [ShoppingListService,RecipeService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

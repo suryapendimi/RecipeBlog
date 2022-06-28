@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipeblog';
+
+  loginsuccess:boolean=false;
+
+  ngOnInit(): void {
+    //debugger;
+    if(sessionStorage.getItem("CurrentLogin"))
+        this.loginsuccess= true;
+        else
+        this.loginsuccess= false;
+  }
+
 }
