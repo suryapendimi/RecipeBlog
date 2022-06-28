@@ -70,4 +70,17 @@ export class RecipeDetailComponent implements OnInit {
       
   }
 
+  onMessage()
+  {
+    this.successMessageShow=false;
+    this.reloadComponent()
+    //this.router.navigate(['../'],{relativeTo:this.route})
+  }
+
+  reloadComponent() {
+    let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate(['recipes']);
+    }
 }
