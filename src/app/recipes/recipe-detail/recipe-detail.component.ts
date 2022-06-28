@@ -14,7 +14,7 @@ export class RecipeDetailComponent implements OnInit {
   constructor(private recipehttpService:RecipeHttpService,
     private route:ActivatedRoute,
     private router:Router) { }
-
+    successMessageShow:boolean;
   ngOnInit() {
     debugger;
     this.route.params
@@ -53,8 +53,21 @@ export class RecipeDetailComponent implements OnInit {
   onDeleteRecipe(){
     // this.router.navigate(['../',this.id,'edit'],
     // {relativeTo:this.route});
-    this.recipehttpService.deleteRecipe(this.id);
-     this.router.navigate(['/recipes']);
+  //  this.recipehttpService.deleteRecipe(this.id);
+   //  this.router.navigate(['/recipes']);
+
+   this.recipehttpService.deleteRecipe(this.id)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.successMessageShow=true;         
+          //this.refreshList();
+          //alert('recipe deleted!')
+        },
+        error: (e) => console.error(e)
+      });
+
+      
   }
 
 }

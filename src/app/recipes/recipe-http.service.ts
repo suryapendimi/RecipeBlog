@@ -72,11 +72,13 @@ export class RecipeHttpService {
       //  this.recipeChanged.next(this.recipes.slice());
       }
 
+      /*
       deleteRecipe(id:number)
       {
+        debugger;
        // this.recipes.splice(index,1);
         //this.recipeChanged.next(this.recipes.slice());
-        const headers = { 'content-type': 'application/json'}  
+      /*   const headers = { 'content-type': 'application/json'}  
         return this.http.delete(this.baseUrl+'/'+id, {'headers':headers})
         .pipe(map((data) =>{
           return data;
@@ -85,7 +87,12 @@ export class RecipeHttpService {
          console.error(err);
          throw err;
        }
-     ));     
+     ));      
 
+     
+      } */
+
+      deleteRecipe(id: any): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/${id}`);
       }
 }

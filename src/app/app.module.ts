@@ -22,6 +22,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AboutComponent } from './shared/about/about.component';
 import { ContactComponent } from './shared/contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { ContactComponent } from './shared/contact/contact.component';
     SignupComponent,
     AboutComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

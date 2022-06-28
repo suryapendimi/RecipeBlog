@@ -76,7 +76,7 @@ export class RecipeEditComponent implements OnInit {
       'ingredients':recieIngredients,
     });
   }
-
+  successMessageShow:boolean=false;
   onSubmit(){
     //console.log(this.recipeForm);
     debugger;
@@ -96,11 +96,14 @@ export class RecipeEditComponent implements OnInit {
     } else{
       this.recipehttpservice.addRecipe(newRecipe)
       .subscribe(data =>{
-        console.log(data)
+        console.log(data);
+        this.successMessageShow=true;
       })
+
+      //this.router.navigate(['recipes']).then(() => { window.location.reload(); });
     }
    // this.recipehttpservice.recipeChanged.next
-    this.onCancel();
+  //  this.onCancel();
    
   }
 
@@ -125,5 +128,10 @@ export class RecipeEditComponent implements OnInit {
 
   onDeleteIngredient(index:number){
     (<FormArray>this.recipeForm.get['ingredients']).removeAt(index);
+  }
+
+  onMessage()
+  {
+    this.successMessageShow=false;
   }
 }

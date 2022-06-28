@@ -1,5 +1,11 @@
 <div class="row" style="margin-top: 80px;">   
     <div class="col-xs-6">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!successMessageShow">
+            <strong>Recipe Save Successfully!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onMessage()">
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
         <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
