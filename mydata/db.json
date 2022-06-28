@@ -124,55 +124,7 @@
           "amount": 5
         }
       ]
-    },
-    {
-      "id": 4,
-      "name": "Bread",
-      "description": "sdcsdfsdf",
-      "imagePath": "https://www.katiescucina.com/wp-content/uploads/2021/09/OG-Minestrone-Soup.jpg",
-      "ingredients": [
-        {
-          "name": "ffdsf",
-          "amount": 3
-        },
-        {
-          "name": "fdsfdsf",
-          "amount": 2
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Registration",
-      "description": "sdfsfewretretretreterte",
-      "imagePath": "https://www.katiescucina.com/wp-content/uploads/2021/09/OG-Minestrone-Soup.jpg",
-      "ingredients": [
-        {
-          "name": "werwe",
-          "amount": 1
-        }
-      ]
     }
-  ],
-  "shoppingList": [
-    {
-      "ingredients": [
-        {
-          "id": 1,
-          "name": " asparagus",
-          "amount": 2
-        },
-        {
-          "id": 2,
-          "name": " asparagus11",
-          "amount": 21
-        },
-        {
-          "id": 3,
-          "name": " asparagus22",
-          "amount": 22
-        }
-      ]
-    }
+   
   ]
 }

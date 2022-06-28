@@ -16,19 +16,27 @@ export class RecipeDetailComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit() {
+    debugger;
     this.route.params
     .subscribe(
       (params: Params)=> {
-      this.id= +params['id']; //+ is typecasting into number
-      debugger;
-        this.recipehttpService.getRecipe(this.id)
-        .subscribe((data=>{
-          this.recipe=data;
-        }))
+      this.id= +params['id']; //+ is typecasting into number       
+      this.getRecipeById(this.id)
     }
     );
+   
   }
 
+  getRecipeById(id: number): void {
+    this.recipehttpService.getRecipe(id)
+      .subscribe({
+        next: (data) => {
+          this.recipe = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
   onAddToShoppingList()
   {
     this.recipehttpService.addIngredientToShoppingList(this.recipe.ingredients);
@@ -36,9 +44,10 @@ export class RecipeDetailComponent implements OnInit {
 
   onEditRecipe()
   {
-    this.router.navigate(['edit'],{relativeTo:this.route});
-   // this.router.navigate(['../',this.id,'edit'],
-  // {relativeTo:this.route});
+    debugger;
+    //this.router.navigate(['edit'],{relativeTo:this.route});
+    this.router.navigate(['../',this.id,'edit'],{relativeTo:this.route});
+  // 
   }
 
   onDeleteRecipe(){

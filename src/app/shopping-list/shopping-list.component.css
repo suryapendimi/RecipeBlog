@@ -1,0 +1,8 @@
+.styled-scrollbars {
+    --scrollbar-foreground: #999
+    --scrollbar-background: #333
+    /* Foreground, Background */
+    
+    max-height: 600;
+    scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+  }

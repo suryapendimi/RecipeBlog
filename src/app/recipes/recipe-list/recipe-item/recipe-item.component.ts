@@ -15,7 +15,7 @@ export class RecipeItemComponent implements OnInit {
   recDesc:string
 
   ngOnInit(): void {
-    //debugger;
+    debugger;
     if(this.recipe!=null)
     {
       this.recipeName=this.recipe.name;

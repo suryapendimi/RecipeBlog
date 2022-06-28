@@ -14,7 +14,7 @@ export class RecipeEditComponent implements OnInit {
   id:number;
   editMode=false;
   recipeForm:FormGroup
-  
+  recipe:Recipe;
   constructor(private route:ActivatedRoute,
     //private recipeServce:RecipeService,
     private recipehttpservice:RecipeHttpService,
@@ -25,34 +25,33 @@ export class RecipeEditComponent implements OnInit {
     this.route.params
     .subscribe((param:Params) =>{
       this.id= + param['id'];
-      this.editMode=param['id']!=null;
-      //console.log(this.editMode);
-      this.initForm();
-    })
+      this.editMode=param['id']!=null;     
+      //console.log(this.editMode);      
+    });
+
+    this.initForm();
   }
 
   getRecipeById(id: number): void {
     this.recipehttpservice.getRecipe(id)
-      .subscribe({
-        next: (data) => {
+      .subscribe((data) => {
           this.recipe = data;
           console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
-  }
+        });
+    }
 
-  recipe:Recipe=null;
   private initForm(){
+    
+    this.getRecipeById(this.id);    
+    console.log(this.recipe);
+
     let recipeName:string='';
     let recipeImagePath:string='';
     let recipedescription:string='';
     let recieIngredients=new FormArray([]);
-
-    if(this.editMode){
-    debugger;      
-     this.getRecipeById(this.id);     
-
+    
+    if(this.editMode && this.recipe!=null){
+          debugger;      
       recipeName=this.recipe.name;
       recipeImagePath=this.recipe.imagePath;
       recipedescription=this.recipe.description;
@@ -68,6 +67,7 @@ export class RecipeEditComponent implements OnInit {
           );
         }
       }
+      
     }
     this.recipeForm=new FormGroup({
       'name':new FormControl(recipeName,Validators.required),
@@ -81,7 +81,7 @@ export class RecipeEditComponent implements OnInit {
     //console.log(this.recipeForm);
     debugger;
     const newRecipe=new Recipe(  
-      this.id=0,
+    this.id=0,
     this.recipeForm.value['name'],
     this.recipeForm.value['description'],
     this.recipeForm.value['imagePath'],
@@ -99,7 +99,7 @@ export class RecipeEditComponent implements OnInit {
         console.log(data)
       })
     }
-    this.recipehttpservice.recipeChanged.next
+   // this.recipehttpservice.recipeChanged.next
     this.onCancel();
    
   }
