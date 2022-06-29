@@ -33,7 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![image](https://user-images.githubusercontent.com/20016435/176494881-700c1ff7-1965-478e-8543-ef50c7740e7a.png)
 ![image](https://user-images.githubusercontent.com/20016435/176495014-0dce3ec9-fa3b-4f7d-bee3-b5a3a8710e2a.png)
 ![image](https://user-images.githubusercontent.com/20016435/176495183-1327b35f-ac24-48e1-b46e-d83208cca40f.png)![image](https://user-images.githubusercontent.com/20016435/176495372-ec15c20b-bf34-47fb-b5b1-744127275e2e.png)
+![image](https://user-images.githubusercontent.com/20016435/176496856-8899e130-c732-4b79-836a-1cb67559caea.png)
 
+Have not written Test cases due to time constraint.Able to make the testcaes by default come in angular creation made them pass.
 
 
 
