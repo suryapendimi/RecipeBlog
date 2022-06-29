@@ -1,5 +1,4 @@
 import { UserService } from './auth/user.service';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -33,8 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     RecipeDetailComponent,
     RecipesComponent,
     RecipeItemComponent,
-    RecipeListComponent,
-    DropdownDirective,
+    RecipeListComponent,    
     RecipeStartComponent,
     RecipeEditComponent,
     LoginComponent,

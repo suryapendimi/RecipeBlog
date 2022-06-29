@@ -39,15 +39,12 @@ export class LoginComponent implements OnInit {
   fnValidateLogin(){
     debugger;
     this.userservice.getAll()
-    //(this.loginForm.value.email)
-    .subscribe((data: ISignupUsers[]) => {
+     .subscribe((data: ISignupUsers[]) => {
       this.signInUsers=data
-        if (data && data.length>0) {
-        //  console.log(data);
-       //   alert('recieved response from api');
+        if (data && data.length>0) {       
        debugger;
           this.signInUser=this.signInUsers.find(x=>x.email===this.loginForm.value.email);
-       //   console.log(this.signInUser);
+      
           this.loginForm.reset();
         if(this.signInUser)
         {
@@ -62,38 +59,10 @@ export class LoginComponent implements OnInit {
           console.log(loginU);
         }
         else
-        {
-          //console.log(loginU);
-          this.isLoginFailed=true;
-          //alert('login Failed')
+        {         
+          this.isLoginFailed=true;          
         }
       }
     });
   }
-
-  /* validateLogin():void {
-    debugger;
-    this.userservice.findByEmail(this.loginForm.value.email)   
-    .subscribe(data => {
-      console.log(data)
-      this.loggedInUser=data;
-    });        
-      if(this.loggedInUser){
-        alert("login Successful");
-        this.loginForm.reset();
-        
-        var loginU=new LoggedInUser();
-        loginU.fullName=this.loggedInUser.FullName;
-        loginU.id=this.loggedInUser.id;
-        sessionStorage.setItem("CurrentLogin",JSON.stringify(loginU));  
-     this.router.navigate(['recipes']).then(() => { window.location.reload(); });
-      
-    }else{
-      alert("user not found");
-    }((err:any)=>{
-      alert("something went wrong");
-    });   
-    
-  } */
- 
 }

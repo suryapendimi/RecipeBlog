@@ -17,9 +17,5 @@ describe('ShoppingEditComponent', () => {
     fixture = TestBed.createComponent(ShoppingEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  });  
 });

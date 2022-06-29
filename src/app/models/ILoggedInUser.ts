@@ -10,9 +10,3 @@ export class LoggedInUser implements ILoggedInUser{
     email:string="";
 }
 
-export class User{
-    Id:number=0;
-    Name:string="";
-    ImageUrl:string="";
-    Country:string="";    
-}

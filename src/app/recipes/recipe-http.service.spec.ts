@@ -9,8 +9,4 @@ describe('RecipeHttpService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(RecipeHttpService);
   });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });
