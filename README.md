@@ -1,6 +1,8 @@
 # Recipeblog
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+![image](https://user-images.githubusercontent.com/20016435/176494211-39d49af2-b633-46e1-aa9f-e3aee3689c68.png)
+
 
 ## Development server
 
