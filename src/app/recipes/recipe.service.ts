@@ -64,6 +64,7 @@ export class RecipeService{
         this.recipeChanged.next(this.recipes.slice());
       }
       updateRecipe(index:number,newRecipe:Recipe){
+        debugger;
         this.recipes[index]=newRecipe;
         this.recipeChanged.next(this.recipes.slice());
       }

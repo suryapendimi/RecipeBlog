@@ -1,13 +1,14 @@
-<div class="row" style="margin-top: 80px;">   
+<div class="row" style="margin-top: 20px;">   
     <div class="col-xs-6">
         <div class="alert alert-success alert-dismissible fade show" role="alert" [hidden]="!successMessageShow">
-            <strong>Recipe Save Successfully!</strong>
+            <strong>Recipe action Successfull!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onMessage()">
               <span aria-hidden="true">X</span>
             </button>
           </div>
+          <div>
         <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-            <div class="row">
+            <div class="row">               
                 <div class="col-xs-12">
                     <button type="submit" 
                     class="btn btn-success"
@@ -24,12 +25,17 @@
                             id="name"
                             formControlName="name"
                             class="form-control">
+                        <input  
+                            type="text"
+                            id="recipeid"
+                            formControlName="recipeid"
+                            class="form-control" [hidden]=true>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label for="name">Image URL</label>
                         <input  
                             type="text"
@@ -40,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row scroll">
                 <div class="col-xs-3">                   
                 <img width="100%"
                 [src]="imagePath.value"
@@ -103,5 +109,6 @@
                     </div>
                 </div>       
         </form>
+        </div>
     </div>
 </div>

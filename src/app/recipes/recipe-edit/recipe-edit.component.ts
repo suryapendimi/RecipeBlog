@@ -1,5 +1,4 @@
 import { Recipe } from './../recipe.model';
-import { RecipeService } from './../recipe.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -27,9 +26,15 @@ export class RecipeEditComponent implements OnInit {
       this.id= + param['id'];
       this.editMode=param['id']!=null;     
       //console.log(this.editMode); 
+      if(this.id>0)
+      {
      this.getRecipeById(this.id);    
       console.log(this.recipe);   
-
+     }
+     else
+     {
+      this.initForm();
+     }
     });
 
   }
@@ -56,7 +61,7 @@ export class RecipeEditComponent implements OnInit {
     }
 
   private initForm(){
-    
+    let recipeid:number=(this.editMode)?this.id:0;
     let recipeName:string='';
     let recipeImagePath:string='';
     let recipedescription:string='';
@@ -82,6 +87,7 @@ export class RecipeEditComponent implements OnInit {
       
     }
     this.recipeForm=new FormGroup({
+      'recipeid':new FormControl(recipeid),
       'name':new FormControl(recipeName,Validators.required),
       'imagePath':new FormControl(recipeImagePath,Validators.required),
       'description':new FormControl(recipedescription,Validators.required),
@@ -93,7 +99,7 @@ export class RecipeEditComponent implements OnInit {
     //console.log(this.recipeForm);
     debugger;
     const newRecipe=new Recipe(  
-    this.id=0,
+    this.id= this.recipeForm.value['id'],
     this.recipeForm.value['name'],
     this.recipeForm.value['description'],
     this.recipeForm.value['imagePath'],
@@ -103,6 +109,7 @@ export class RecipeEditComponent implements OnInit {
       this.recipehttpservice.updateRecipe(this.id,newRecipe)
       .subscribe(data => {
         console.log(data)
+        this.successMessageShow=true;
         //this.router.navigate(['../'],{relativeTo:this.route})
       })      
     } else{
@@ -111,6 +118,7 @@ export class RecipeEditComponent implements OnInit {
         console.log(data);
         this.successMessageShow=true;
       })
+      this.recipeForm.reset();
 
       //this.router.navigate(['recipes']).then(() => { window.location.reload(); });
     }

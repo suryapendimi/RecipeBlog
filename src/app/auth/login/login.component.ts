@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       this.signInUsers=data
         if (data && data.length>0) {       
        debugger;
-          this.signInUser=this.signInUsers.find(x=>x.email===this.loginForm.value.email);
+          this.signInUser=this.signInUsers.find(x=>(x.email===this.loginForm.value.email) && (x.password===this.loginForm.value.password));
       
           this.loginForm.reset();
         if(this.signInUser)

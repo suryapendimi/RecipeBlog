@@ -55,7 +55,8 @@ export class RecipeHttpService {
         this.recipeChanged.next(this.recipes.slice());
         }
       
-      updateRecipe(id:number,newRecipe:Recipe): Observable<any> {  
+     /*  updateRecipe(id:number,newRecipe:Recipe): Observable<any> {  
+        debugger;
         const headers = { 'content-type': 'application/json'}  
         const body=JSON.stringify(newRecipe);
         console.log(body)   
@@ -68,13 +69,18 @@ export class RecipeHttpService {
            console.error(err);
            throw err;
          }
-       ));     
+       ));     */ 
+       // }
+
+       updateRecipe(id:number,newRecipe:Recipe): Observable<any> {
+        return this.http.put(`${this.baseUrl}/${id}`, newRecipe)
+    }
 
 
       //{
       //  this.recipes[index]=newRecipe;
       //  this.recipeChanged.next(this.recipes.slice());
-      }
+      
 
       /*
       deleteRecipe(id:number)
